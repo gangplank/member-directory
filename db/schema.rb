@@ -11,15 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160420061830) do
+ActiveRecord::Schema.define(version: 20160420052210) do
 
   create_table "availabilities", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "member_skills", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -30,11 +25,6 @@ ActiveRecord::Schema.define(version: 20160420061830) do
     t.string   "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "members_skills", id: false, force: :cascade do |t|
-    t.integer "member_id", null: false
-    t.integer "skill_id",  null: false
   end
 
   create_table "skills", force: :cascade do |t|
