@@ -15,5 +15,14 @@
   <%= @member.phone %>
 </p>
 
+<p>
+  <strong>Skills:</strong>
+  <% @member.skills.each do |skill| %>
+    <ul>
+      <li><%= skill.name %></li>
+    </ul>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_member_path(@member) %> |
 <%= link_to 'Back', members_path %>
