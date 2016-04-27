@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :member_skills
   resources :availabilities
   resources :skills
   resources :members
