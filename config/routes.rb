@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
+  resources :member_availabilities
   resources :member_skills
   resources :availabilities
   resources :skills
+  
+  put 'members/:id/associate_skill/:skill_id' => 'member#associate_skill'
   resources :members
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

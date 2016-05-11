@@ -11,13 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160427010958) do
+ActiveRecord::Schema.define(version: 20160427041458) do
 
   create_table "availabilities", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "member_availabilities", force: :cascade do |t|
+    t.integer  "member_id"
+    t.integer  "availability_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "member_availabilities", ["availability_id"], name: "index_member_availabilities_on_availability_id"
+  add_index "member_availabilities", ["member_id"], name: "index_member_availabilities_on_member_id"
 
   create_table "member_skills", force: :cascade do |t|
     t.integer  "skill_id"

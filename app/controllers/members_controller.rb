@@ -1,5 +1,5 @@
 class MembersController < ApplicationController
-  before_action :set_member, only: [:show, :edit, :update, :destroy]
+  before_action :set_member, only: [:show, :edit, :update, :destroy, :associate_skill]
 
   # GET /members
   # GET /members.json
@@ -49,6 +49,11 @@ class MembersController < ApplicationController
         format.json { render json: @member.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  # PATCH/PUT /members/1/associate_skill/1
+  def associate
+    @member.skills.push(Skill.find(params[:skill_id]))
   end
 
   # DELETE /members/1
